@@ -1,15 +1,21 @@
 #include "funciones.h"
 
-void menu()
+void Fibonacci()
 {
-	int opcion_menu_principal;
-	cout << "Bienvenido." << endl;
-	cout << "1. Jugar" << endl << "2. Instrucciones" << endl << "3. Creditos" << endl << "4. Salir" << endl;
-	cout << "Selecciona opcion: ";
-	cin >> opcion_menu_principal;
-	while (opcion_menu_principal > 4 || opcion_menu_principal < 1)
+	int i, n, primer = 0, segon = 1, aux;
+	cout << "Quantos terminos de Fibonacci quieres ver? ";
+	cin >> n;
+	while (n > 40)
 	{
-		cout << endl << "Error. Opcion incorrecta." << endl << "Selecciona opcion: ";
-		cin >> opcion_menu_principal;
+		cout << endl << "No se pueden visualizar mas de 40 terminos de Fibonacci" << endl;
+		cout << "Quantos terminos de Fibonacci quieres ver? ";
+		cin >> n;
+	}
+	for (i = 0;i < n; i++)
+	{
+		cout << primer << " ";
+		aux = primer + segon;
+		primer = segon;
+		segon = aux;
 	}
 }
